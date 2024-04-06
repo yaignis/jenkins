@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Create File') {
+            steps {
+               sh 'touch /tmp/file1.txt' 
+            }
+        }   
+                stage('Delete File') {
+            steps {
+                sh 'rm /tmp/file1.txt'
+            }
+        }
+                        stage('Test') {
+            steps {
+                echo 'Hello TEST'
+            }
+        }
+                                stage('PROD') {
+            steps {
+                echo 'Hello PROD'
+            }
+        }
+    }
+}
